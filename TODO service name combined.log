@@ -1,0 +1,12 @@
+{"message":"starting \"getUserActions\" service: getUserActions on port: 3000","level":"info","service":"TODO service name","timestamp":"2021-03-28T10:25:47.475Z"}
+{"message":"nodeCleanup exitCode: null signal: SIGINT","level":"error","service":"TODO service name","timestamp":"2021-03-28T10:25:50.652Z"}
+{"message":"starting \"getUserActions\" service: getUserActions on port: 3000","level":"info","service":"TODO service name","timestamp":"2021-03-28T10:27:52.950Z"}
+{"message":"nodeCleanup exitCode: null signal: SIGINT","level":"error","service":"TODO service name","timestamp":"2021-03-28T10:27:54.943Z"}
+{"message":"starting \"getUserActions\" service: getUserActions on port: 3000","level":"info","service":"TODO service name","timestamp":"2021-03-28T10:28:59.212Z"}
+{"message":"nodeCleanup exitCode: null signal: SIGINT","level":"error","service":"TODO service name","timestamp":"2021-03-28T10:29:01.755Z"}
+{"message":"starting \"getUserActions\" service: getUserActions on port: 3000","level":"info","service":"TODO service name","timestamp":"2021-03-28T10:30:53.540Z"}
+{"message":"nodeCleanup exitCode: null signal: SIGINT","level":"error","service":"TODO service name","timestamp":"2021-03-28T10:30:58.987Z"}
+{"message":"starting \"getUserActions\" service: getUserActions on port: 3000","level":"info","service":"TODO service name","timestamp":"2021-03-28T10:32:03.237Z"}
+{"message":"nodeCleanup exitCode: null signal: SIGINT","level":"error","service":"TODO service name","timestamp":"2021-03-28T10:32:06.418Z"}
+{"message":"starting \"getUserActions\" service: getUserActions on port: 3000","level":"info","service":"TODO service name","timestamp":"2021-03-28T10:32:52.670Z"}
+{"message":"nodeCleanup exitCode: null signal: SIGINT","level":"error","service":"TODO service name","timestamp":"2021-03-28T10:32:55.095Z"}

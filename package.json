@@ -1,0 +1,35 @@
+{
+  "name": "getUserActions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-service-get": "parcel build services/getUserActions/index.ts  --target node --out-dir services/getUserActions/dist/  --bundle-node-modules --no-source-maps --no-minify && node services/getUserActions/dist/index.js "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "kafkajs": "^1.15.0",
+    "lowdash": "^1.2.0",
+    "node-cleanup": "^2.1.2",
+    "redis": "^3.0.2",
+    "ts-pattern": "^3.1.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^14.14.36",
+    "@types/node-cleanup": "^2.1.1",
+    "@types/redis": "^2.8.28",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "eslint": "^7.22.0",
+    "parcel-bundler": "^1.12.5",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
+}

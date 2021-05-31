@@ -1,0 +1,71 @@
+version: '3'
+
+
+networks:
+  kafka-net:
+    driver: bridge
+
+services:
+  zookeeper-server:
+    image: 'bitnami/zookeeper:latest'
+    networks:
+      - kafka-net
+    ports:
+      - '2181:2181'
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+  kafka-server1:
+    image: 'bitnami/kafka:latest'
+    networks:
+      - kafka-net
+    ports:
+      - '9092:9092'
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper-server:2181
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    depends_on:
+      - zookeeper-server
+
+# services:
+#   zoo1: 
+#     image: zookeeper:3.4.9
+#     restart: unless-stopped
+#     hostname: zoo1
+#     ports:
+#       - "2181:2181"
+#     environment:
+#       ZOO_MY_ID: 1
+#       ZOO_PORT: 2181
+#       ZOO_SERVERS: server.1=zoo1:2888:3888
+#     volumes:
+#       - ./full-stack/zoo1/data:/data
+#       - ./full-stack/zoo1/datalog:/datalog
+
+#   kafka1:
+#     image: confluentinc/cp-kafka:5.2.1
+#     hostname: kafka1
+#     ports: 
+#       - "9092:9092"
+#     environment:
+#       KAFKA_ADVERTISED_LISTENERS: KAFKA_ADVERTISED_LISTENERS://kafka1:19092, LISTENER_DOCKER_EXTERNAL://${DOCKER_HOST_IP:-127.0.0.1}:9002 
+#       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LISTENER_DOCKER_EXTERNAL:PLAINTEXT, LISTENER_DOCKER_external:PLAINTEXT
+#       KAFKA_INTER_BROKER_LISTENER_NAME: LISTENER_DOCKER_INTERNAL
+#       KAFKA_ZOOKEEPER_CONNECT: "zoo1:2181"
+#       KAFKA_BROKER_ID: 1
+#       KAFKA_LOG4J_LOGGERS: "kafka.controller=INFO, kafka.producer.async.DEfsultEventHandler=INFO, state.change.logger=INFO"
+#       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+#     volumes:
+#       - ./full-stack/kafka1/data:/var/lib/kafka/data
+#     depends_on:
+#       - zoo1
+    
+  redis:     
+    image: "redis"          
+    ports:      
+      - "6379:6379"      
+    # volumes:      
+    #   - $PWD/redis-data:/var/lib/redis       
+    #   - $PWD/redis.conf:/usr/local/etc/redis/redis.conf      
+    # environment: 
+
